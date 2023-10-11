@@ -1,0 +1,241 @@
+digraph {
+        compound = "true"
+        newrank = "true"
+        subgraph "root" {
+                "[root] aws_autoscaling_attachment.autoscaling_attachment (expand)" [label = "aws_autoscaling_attachment.autoscaling_attachment", shape = "box"]
+                "[root] aws_autoscaling_group.autoscaling_group (expand)" [label = "aws_autoscaling_group.autoscaling_group", shape = "box"]
+                "[root] aws_autoscaling_notification.ASG_Launch_Termination_notification (expand)" [label = "aws_autoscaling_notification.ASG_Launch_Termination_notification", shape = "box"]
+                "[root] aws_cloudwatch_metric_alarm.CPU_utilization_alarm (expand)" [label = "aws_cloudwatch_metric_alarm.CPU_utilization_alarm", shape = "box"]
+                "[root] aws_db_subnet_group.db_subnet_group (expand)" [label = "aws_db_subnet_group.db_subnet_group", shape = "box"]       
+                "[root] aws_eip.NAT-gateway-EIP1 (expand)" [label = "aws_eip.NAT-gateway-EIP1", shape = "box"]
+                "[root] aws_eip.NAT-gateway-EIP2 (expand)" [label = "aws_eip.NAT-gateway-EIP2", shape = "box"]
+                "[root] aws_eip.NAT-gateway-EIP3 (expand)" [label = "aws_eip.NAT-gateway-EIP3", shape = "box"]
+                "[root] aws_iam_instance_profile.instance_profile (expand)" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+                "[root] aws_iam_policy.central_storage_S3_policy (expand)" [label = "aws_iam_policy.central_storage_S3_policy", shape = "box"]
+                "[root] aws_iam_policy.ec2_mysql_policy (expand)" [label = "aws_iam_policy.ec2_mysql_policy", shape = "box"]
+                "[root] aws_iam_policy_attachment.EC2toS3_policy_attachment (expand)" [label = "aws_iam_policy_attachment.EC2toS3_policy_attachment", shape = "box"]
+                "[root] aws_iam_role.EC2-to-S3_role (expand)" [label = "aws_iam_role.EC2-to-S3_role", shape = "box"]
+                "[root] aws_iam_role.ec2_mysql_role (expand)" [label = "aws_iam_role.ec2_mysql_role", shape = "box"]
+                "[root] aws_iam_role_policy_attachment.S3_policy_attachment (expand)" [label = "aws_iam_role_policy_attachment.S3_policy_attachment", shape = "box"]
+                "[root] aws_iam_role_policy_attachment.ec2_mysql_policy_attachment (expand)" [label = "aws_iam_role_policy_attachment.ec2_mysql_policy_attachment", shape = "box"]
+                "[root] aws_instance.my-tf-instance-public (expand)" [label = "aws_instance.my-tf-instance-public", shape = "box"]
+                "[root] aws_internet_gateway.my_igw_1 (expand)" [label = "aws_internet_gateway.my_igw_1", shape = "box"]
+                "[root] aws_key_pair.my-tf-keypair (expand)" [label = "aws_key_pair.my-tf-keypair", shape = "box"]
+                "[root] aws_launch_template.launch-template (expand)" [label = "aws_launch_template.launch-template", shape = "box"]       
+                "[root] aws_lb.application_load_balancer (expand)" [label = "aws_lb.application_load_balancer", shape = "box"]
+                "[root] aws_lb_listener.listener (expand)" [label = "aws_lb_listener.listener", shape = "box"]
+                "[root] aws_lb_target_group.target_group (expand)" [label = "aws_lb_target_group.target_group", shape = "box"]
+                "[root] aws_nat_gateway.my-NAT-gateway1 (expand)" [label = "aws_nat_gateway.my-NAT-gateway1", shape = "box"]
+                "[root] aws_nat_gateway.my-NAT-gateway2 (expand)" [label = "aws_nat_gateway.my-NAT-gateway2", shape = "box"]
+                "[root] aws_nat_gateway.my-NAT-gateway3 (expand)" [label = "aws_nat_gateway.my-NAT-gateway3", shape = "box"]
+                "[root] aws_rds_cluster.mysql_cluster (expand)" [label = "aws_rds_cluster.mysql_cluster", shape = "box"]
+                "[root] aws_route53_record.Alias-ALB (expand)" [label = "aws_route53_record.Alias-ALB", shape = "box"]
+                "[root] aws_route_table.my-public-rt-1 (expand)" [label = "aws_route_table.my-public-rt-1", shape = "box"]
+                "[root] aws_route_table.private_route_table1 (expand)" [label = "aws_route_table.private_route_table1", shape = "box"]     
+                "[root] aws_route_table.private_route_table2 (expand)" [label = "aws_route_table.private_route_table2", shape = "box"]     
+                "[root] aws_route_table.private_route_table3 (expand)" [label = "aws_route_table.private_route_table3", shape = "box"]     
+                "[root] aws_route_table_association.private_route_table_association_1 (expand)" [label = "aws_route_table_association.private_route_table_association_1", shape = "box"]
+                "[root] aws_route_table_association.private_route_table_association_2 (expand)" [label = "aws_route_table_association.private_route_table_association_2", shape = "box"]
+                "[root] aws_route_table_association.private_route_table_association_3 (expand)" [label = "aws_route_table_association.private_route_table_association_3", shape = "box"]
+                "[root] aws_route_table_association.publicsubet1-rt-association1 (expand)" [label = "aws_route_table_association.publicsubet1-rt-association1", shape = "box"]
+                "[root] aws_route_table_association.publicsubet1-rt-association2 (expand)" [label = "aws_route_table_association.publicsubet1-rt-association2", shape = "box"]
+                "[root] aws_route_table_association.publicsubet1-rt-association3 (expand)" [label = "aws_route_table_association.publicsubet1-rt-association3", shape = "box"]
+                "[root] aws_s3_bucket.central-storage-s3-storage (expand)" [label = "aws_s3_bucket.central-storage-s3-storage", shape = "box"]
+                "[root] aws_security_group.allow-http-anywhere (expand)" [label = "aws_security_group.allow-http-anywhere", shape = "box"] 
+                "[root] aws_security_group.allow-ssh-anywhere (expand)" [label = "aws_security_group.allow-ssh-anywhere", shape = "box"]   
+                "[root] aws_security_group.load_balancer (expand)" [label = "aws_security_group.load_balancer", shape = "box"]
+                "[root] aws_security_group.mysql_sg (expand)" [label = "aws_security_group.mysql_sg", shape = "box"]
+                "[root] aws_sns_topic.ASG_CPU (expand)" [label = "aws_sns_topic.ASG_CPU", shape = "box"]
+                "[root] aws_sns_topic.ASG_Launch_Termination (expand)" [label = "aws_sns_topic.ASG_Launch_Termination", shape = "box"]     
+                "[root] aws_sns_topic_subscription.ASG_CPU_subscription (expand)" [label = "aws_sns_topic_subscription.ASG_CPU_subscription", shape = "box"]
+                "[root] aws_sns_topic_subscription.ASG_Launch_Termination_subscription (expand)" [label = "aws_sns_topic_subscription.ASG_Launch_Termination_subscription", shape = "box"]
+                "[root] aws_subnet.my_private_subnet1 (expand)" [label = "aws_subnet.my_private_subnet1", shape = "box"]
+                "[root] aws_subnet.my_private_subnet2 (expand)" [label = "aws_subnet.my_private_subnet2", shape = "box"]
+                "[root] aws_subnet.my_private_subnet3 (expand)" [label = "aws_subnet.my_private_subnet3", shape = "box"]
+                "[root] aws_subnet.my_public_subnet1 (expand)" [label = "aws_subnet.my_public_subnet1", shape = "box"]
+                "[root] aws_subnet.my_public_subnet2 (expand)" [label = "aws_subnet.my_public_subnet2", shape = "box"]
+                "[root] aws_subnet.my_public_subnet3 (expand)" [label = "aws_subnet.my_public_subnet3", shape = "box"]
+                "[root] aws_vpc.my_vpc_resource (expand)" [label = "aws_vpc.my_vpc_resource", shape = "box"]
+                "[root] local_file.output_file (expand)" [label = "local_file.output_file", shape = "box"]
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+                "[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
+                "[root] provider[\"registry.terraform.io/hashicorp/tls\"]" [label = "provider[\"registry.terraform.io/hashicorp/tls\"]", shape = "diamond"]
+                "[root] tls_private_key.key_formy_tf-VPC (expand)" [label = "tls_private_key.key_formy_tf-VPC", shape = "box"]
+                "[root] var.A-Z-1" [label = "var.A-Z-1", shape = "note"]
+                "[root] var.A-Z-2" [label = "var.A-Z-2", shape = "note"]
+                "[root] var.A-Z-3" [label = "var.A-Z-3", shape = "note"]
+                "[root] var.S3_storage_bucket" [label = "var.S3_storage_bucket", shape = "note"]
+                "[root] var.SNS_email" [label = "var.SNS_email", shape = "note"]
+                "[root] var.database_pswd" [label = "var.database_pswd", shape = "note"]
+                "[root] var.database_username" [label = "var.database_username", shape = "note"]
+                "[root] var.domain_name" [label = "var.domain_name", shape = "note"]
+                "[root] var.hosted_zone_id" [label = "var.hosted_zone_id", shape = "note"]
+                "[root] var.igw_name_1" [label = "var.igw_name_1", shape = "note"]
+                "[root] var.my_private_subnet1_cidr_block" [label = "var.my_private_subnet1_cidr_block", shape = "note"]
+                "[root] var.my_private_subnet1_name" [label = "var.my_private_subnet1_name", shape = "note"]
+                "[root] var.my_private_subnet2_cidr_block" [label = "var.my_private_subnet2_cidr_block", shape = "note"]
+                "[root] var.my_private_subnet2_name" [label = "var.my_private_subnet2_name", shape = "note"]
+                "[root] var.my_private_subnet3_cidr_block" [label = "var.my_private_subnet3_cidr_block", shape = "note"]
+                "[root] var.my_private_subnet3_name" [label = "var.my_private_subnet3_name", shape = "note"]
+                "[root] var.my_public_subnet1_cidr_block" [label = "var.my_public_subnet1_cidr_block", shape = "note"]
+                "[root] var.my_public_subnet1_name" [label = "var.my_public_subnet1_name", shape = "note"]
+                "[root] var.my_public_subnet2_cidr_block" [label = "var.my_public_subnet2_cidr_block", shape = "note"]
+                "[root] var.my_public_subnet2_name" [label = "var.my_public_subnet2_name", shape = "note"]
+                "[root] var.my_public_subnet3_cidr_block" [label = "var.my_public_subnet3_cidr_block", shape = "note"]
+                "[root] var.my_public_subnet3_name" [label = "var.my_public_subnet3_name", shape = "note"]
+                "[root] var.public-rt-1" [label = "var.public-rt-1", shape = "note"]
+                "[root] var.region" [label = "var.region", shape = "note"]
+                "[root] var.user_data_for_instance" [label = "var.user_data_for_instance", shape = "note"]
+                "[root] var.vpc_cidr_block" [label = "var.vpc_cidr_block", shape = "note"]
+                "[root] var.vpc_name" [label = "var.vpc_name", shape = "note"]
+                "[root] aws_autoscaling_attachment.autoscaling_attachment (expand)" -> "[root] aws_autoscaling_group.autoscaling_group (expand)"
+                "[root] aws_autoscaling_attachment.autoscaling_attachment (expand)" -> "[root] aws_lb_target_group.target_group (expand)"  
+                "[root] aws_autoscaling_group.autoscaling_group (expand)" -> "[root] aws_launch_template.launch-template (expand)"
+                "[root] aws_autoscaling_group.autoscaling_group (expand)" -> "[root] aws_subnet.my_private_subnet1 (expand)"
+                "[root] aws_autoscaling_group.autoscaling_group (expand)" -> "[root] aws_subnet.my_private_subnet2 (expand)"
+                "[root] aws_autoscaling_notification.ASG_Launch_Termination_notification (expand)" -> "[root] aws_autoscaling_group.autoscaling_group (expand)"
+                "[root] aws_autoscaling_notification.ASG_Launch_Termination_notification (expand)" -> "[root] aws_sns_topic.ASG_Launch_Termination (expand)"
+                "[root] aws_cloudwatch_metric_alarm.CPU_utilization_alarm (expand)" -> "[root] aws_autoscaling_group.autoscaling_group (expand)"
+                "[root] aws_cloudwatch_metric_alarm.CPU_utilization_alarm (expand)" -> "[root] aws_sns_topic.ASG_CPU (expand)"
+                "[root] aws_db_subnet_group.db_subnet_group (expand)" -> "[root] aws_subnet.my_private_subnet1 (expand)"
+                "[root] aws_db_subnet_group.db_subnet_group (expand)" -> "[root] aws_subnet.my_private_subnet2 (expand)"
+                "[root] aws_db_subnet_group.db_subnet_group (expand)" -> "[root] aws_subnet.my_private_subnet3 (expand)"
+                "[root] aws_eip.NAT-gateway-EIP1 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_eip.NAT-gateway-EIP2 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_eip.NAT-gateway-EIP3 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_iam_instance_profile.instance_profile (expand)" -> "[root] aws_iam_role.EC2-to-S3_role (expand)"
+                "[root] aws_iam_policy.central_storage_S3_policy (expand)" -> "[root] aws_s3_bucket.central-storage-s3-storage (expand)"   
+                "[root] aws_iam_policy.ec2_mysql_policy (expand)" -> "[root] aws_rds_cluster.mysql_cluster (expand)"
+                "[root] aws_iam_policy_attachment.EC2toS3_policy_attachment (expand)" -> "[root] aws_iam_role.EC2-to-S3_role (expand)"     
+                "[root] aws_iam_role.EC2-to-S3_role (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_iam_role.ec2_mysql_role (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_iam_role_policy_attachment.S3_policy_attachment (expand)" -> "[root] aws_iam_policy.central_storage_S3_policy (expand)"
+                "[root] aws_iam_role_policy_attachment.S3_policy_attachment (expand)" -> "[root] aws_iam_role.EC2-to-S3_role (expand)"     
+                "[root] aws_iam_role_policy_attachment.ec2_mysql_policy_attachment (expand)" -> "[root] aws_iam_policy.ec2_mysql_policy (expand)"
+                "[root] aws_iam_role_policy_attachment.ec2_mysql_policy_attachment (expand)" -> "[root] aws_iam_role.ec2_mysql_role (expand)"
+                "[root] aws_instance.my-tf-instance-public (expand)" -> "[root] aws_key_pair.my-tf-keypair (expand)"
+                "[root] aws_instance.my-tf-instance-public (expand)" -> "[root] aws_security_group.allow-http-anywhere (expand)"
+                "[root] aws_instance.my-tf-instance-public (expand)" -> "[root] aws_security_group.allow-ssh-anywhere (expand)"
+                "[root] aws_instance.my-tf-instance-public (expand)" -> "[root] aws_subnet.my_public_subnet1 (expand)"
+                "[root] aws_instance.my-tf-instance-public (expand)" -> "[root] var.user_data_for_instance"
+                "[root] aws_internet_gateway.my_igw_1 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_internet_gateway.my_igw_1 (expand)" -> "[root] var.igw_name_1"
+                "[root] aws_key_pair.my-tf-keypair (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_key_pair.my-tf-keypair (expand)" -> "[root] tls_private_key.key_formy_tf-VPC (expand)"
+                "[root] aws_launch_template.launch-template (expand)" -> "[root] aws_iam_instance_profile.instance_profile (expand)"       
+                "[root] aws_launch_template.launch-template (expand)" -> "[root] aws_key_pair.my-tf-keypair (expand)"
+                "[root] aws_launch_template.launch-template (expand)" -> "[root] aws_security_group.load_balancer (expand)"
+                "[root] aws_launch_template.launch-template (expand)" -> "[root] var.user_data_for_instance"
+                "[root] aws_lb.application_load_balancer (expand)" -> "[root] aws_security_group.load_balancer (expand)"
+                "[root] aws_lb.application_load_balancer (expand)" -> "[root] aws_subnet.my_public_subnet1 (expand)"
+                "[root] aws_lb.application_load_balancer (expand)" -> "[root] aws_subnet.my_public_subnet2 (expand)"
+                "[root] aws_lb_listener.listener (expand)" -> "[root] aws_lb.application_load_balancer (expand)"
+                "[root] aws_lb_listener.listener (expand)" -> "[root] aws_lb_target_group.target_group (expand)"
+                "[root] aws_lb_target_group.target_group (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway1 (expand)" -> "[root] aws_eip.NAT-gateway-EIP1 (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway1 (expand)" -> "[root] aws_subnet.my_public_subnet1 (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway2 (expand)" -> "[root] aws_eip.NAT-gateway-EIP2 (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway2 (expand)" -> "[root] aws_subnet.my_public_subnet2 (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway3 (expand)" -> "[root] aws_eip.NAT-gateway-EIP3 (expand)"
+                "[root] aws_nat_gateway.my-NAT-gateway3 (expand)" -> "[root] aws_subnet.my_public_subnet3 (expand)"
+                "[root] aws_rds_cluster.mysql_cluster (expand)" -> "[root] aws_db_subnet_group.db_subnet_group (expand)"
+                "[root] aws_rds_cluster.mysql_cluster (expand)" -> "[root] aws_security_group.mysql_sg (expand)"
+                "[root] aws_rds_cluster.mysql_cluster (expand)" -> "[root] var.database_pswd"
+                "[root] aws_rds_cluster.mysql_cluster (expand)" -> "[root] var.database_username"
+                "[root] aws_route53_record.Alias-ALB (expand)" -> "[root] aws_lb.application_load_balancer (expand)"
+                "[root] aws_route53_record.Alias-ALB (expand)" -> "[root] var.domain_name"
+                "[root] aws_route53_record.Alias-ALB (expand)" -> "[root] var.hosted_zone_id"
+                "[root] aws_route_table.my-public-rt-1 (expand)" -> "[root] aws_internet_gateway.my_igw_1 (expand)"
+                "[root] aws_route_table.my-public-rt-1 (expand)" -> "[root] var.public-rt-1"
+                "[root] aws_route_table.private_route_table1 (expand)" -> "[root] aws_nat_gateway.my-NAT-gateway1 (expand)"
+                "[root] aws_route_table.private_route_table2 (expand)" -> "[root] aws_nat_gateway.my-NAT-gateway2 (expand)"
+                "[root] aws_route_table.private_route_table3 (expand)" -> "[root] aws_nat_gateway.my-NAT-gateway3 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_1 (expand)" -> "[root] aws_route_table.private_route_table1 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_1 (expand)" -> "[root] aws_subnet.my_private_subnet1 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_2 (expand)" -> "[root] aws_route_table.private_route_table2 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_2 (expand)" -> "[root] aws_subnet.my_private_subnet2 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_3 (expand)" -> "[root] aws_route_table.private_route_table3 (expand)"
+                "[root] aws_route_table_association.private_route_table_association_3 (expand)" -> "[root] aws_subnet.my_private_subnet3 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association1 (expand)" -> "[root] aws_route_table.my-public-rt-1 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association1 (expand)" -> "[root] aws_subnet.my_public_subnet1 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association2 (expand)" -> "[root] aws_route_table.my-public-rt-1 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association2 (expand)" -> "[root] aws_subnet.my_public_subnet2 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association3 (expand)" -> "[root] aws_route_table.my-public-rt-1 (expand)"
+                "[root] aws_route_table_association.publicsubet1-rt-association3 (expand)" -> "[root] aws_subnet.my_public_subnet3 (expand)"
+                "[root] aws_s3_bucket.central-storage-s3-storage (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"   
+                "[root] aws_s3_bucket.central-storage-s3-storage (expand)" -> "[root] var.S3_storage_bucket"
+                "[root] aws_security_group.allow-http-anywhere (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_security_group.allow-ssh-anywhere (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_security_group.load_balancer (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_security_group.mysql_sg (expand)" -> "[root] aws_launch_template.launch-template (expand)"
+                "[root] aws_sns_topic.ASG_CPU (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_sns_topic.ASG_Launch_Termination (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"       
+                "[root] aws_sns_topic_subscription.ASG_CPU_subscription (expand)" -> "[root] aws_sns_topic.ASG_CPU (expand)"
+                "[root] aws_sns_topic_subscription.ASG_CPU_subscription (expand)" -> "[root] var.SNS_email"
+                "[root] aws_sns_topic_subscription.ASG_Launch_Termination_subscription (expand)" -> "[root] aws_sns_topic.ASG_Launch_Termination (expand)"
+                "[root] aws_sns_topic_subscription.ASG_Launch_Termination_subscription (expand)" -> "[root] var.SNS_email"
+                "[root] aws_subnet.my_private_subnet1 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_private_subnet1 (expand)" -> "[root] var.A-Z-1"
+                "[root] aws_subnet.my_private_subnet1 (expand)" -> "[root] var.my_private_subnet1_cidr_block"
+                "[root] aws_subnet.my_private_subnet1 (expand)" -> "[root] var.my_private_subnet1_name"
+                "[root] aws_subnet.my_private_subnet2 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_private_subnet2 (expand)" -> "[root] var.A-Z-2"
+                "[root] aws_subnet.my_private_subnet2 (expand)" -> "[root] var.my_private_subnet2_cidr_block"
+                "[root] aws_subnet.my_private_subnet2 (expand)" -> "[root] var.my_private_subnet2_name"
+                "[root] aws_subnet.my_private_subnet3 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_private_subnet3 (expand)" -> "[root] var.A-Z-3"
+                "[root] aws_subnet.my_private_subnet3 (expand)" -> "[root] var.my_private_subnet3_cidr_block"
+                "[root] aws_subnet.my_private_subnet3 (expand)" -> "[root] var.my_private_subnet3_name"
+                "[root] aws_subnet.my_public_subnet1 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_public_subnet1 (expand)" -> "[root] var.A-Z-1"
+                "[root] aws_subnet.my_public_subnet1 (expand)" -> "[root] var.my_public_subnet1_cidr_block"
+                "[root] aws_subnet.my_public_subnet1 (expand)" -> "[root] var.my_public_subnet1_name"
+                "[root] aws_subnet.my_public_subnet2 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_public_subnet2 (expand)" -> "[root] var.A-Z-2"
+                "[root] aws_subnet.my_public_subnet2 (expand)" -> "[root] var.my_public_subnet2_cidr_block"
+                "[root] aws_subnet.my_public_subnet2 (expand)" -> "[root] var.my_public_subnet2_name"
+                "[root] aws_subnet.my_public_subnet3 (expand)" -> "[root] aws_vpc.my_vpc_resource (expand)"
+                "[root] aws_subnet.my_public_subnet3 (expand)" -> "[root] var.A-Z-3"
+                "[root] aws_subnet.my_public_subnet3 (expand)" -> "[root] var.my_public_subnet3_cidr_block"
+                "[root] aws_subnet.my_public_subnet3 (expand)" -> "[root] var.my_public_subnet3_name"
+                "[root] aws_vpc.my_vpc_resource (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+                "[root] aws_vpc.my_vpc_resource (expand)" -> "[root] var.vpc_cidr_block"
+                "[root] local.timestamp_no_colons (expand)" -> "[root] local.timestamp_no_z (expand)"
+                "[root] local.timestamp_no_hyphens (expand)" -> "[root] local.timestamp (expand)"
+                "[root] local.timestamp_no_spaces (expand)" -> "[root] local.timestamp_no_hyphens (expand)"
+                "[root] local.timestamp_no_t (expand)" -> "[root] local.timestamp_no_spaces (expand)"
+                "[root] local.timestamp_no_z (expand)" -> "[root] local.timestamp_no_t (expand)"
+                "[root] local.timestamp_sanitized (expand)" -> "[root] local.timestamp_no_colons (expand)"
+                "[root] local_file.output_file (expand)" -> "[root] aws_key_pair.my-tf-keypair (expand)"
+                "[root] local_file.output_file (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+                "[root] output.public_key_tf_VPC (expand)" -> "[root] tls_private_key.key_formy_tf-VPC (expand)"
+                "[root] output.timestamp (expand)" -> "[root] local.timestamp_sanitized (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_autoscaling_attachment.autoscaling_attachment (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_autoscaling_notification.ASG_Launch_Termination_notification (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_cloudwatch_metric_alarm.CPU_utilization_alarm (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_policy_attachment.EC2toS3_policy_attachment (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.S3_policy_attachment (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.ec2_mysql_policy_attachment (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.my-tf-instance-public (expand)" 
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lb_listener.listener (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route53_record.Alias-ALB (expand)"       
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private_route_table_association_1 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private_route_table_association_2 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private_route_table_association_3 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.publicsubet1-rt-association1 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.publicsubet1-rt-association2 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.publicsubet1-rt-association3 (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_sns_topic_subscription.ASG_CPU_subscription (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_sns_topic_subscription.ASG_Launch_Termination_subscription (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+                "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_file.output_file (expand)"
+                "[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)" -> "[root] tls_private_key.key_formy_tf-VPC (expand)"   
+                "[root] root" -> "[root] output.public_key_tf_VPC (expand)"
+                "[root] root" -> "[root] output.timestamp (expand)"
+                "[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+                "[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
+                "[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)"
+                "[root] root" -> "[root] var.vpc_name"
+                "[root] tls_private_key.key_formy_tf-VPC (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"]"
+        }
+}
