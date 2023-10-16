@@ -5,12 +5,12 @@ In this project I created a three-tier web application.
  
 2.	Business Logic Layer (Middle Tier): This layer consists of VPC networking and servers; 
 
-  1.	3 public subnets and 3 private subnets are created in a VPC; 
-  2.	3 private subnets are needed to enable multi-AZ for MySQL RDS
-  3.	The public subnets are accessible from internet through an internet gateway in the VPC;
-  4.	The private subnets are associated with route tables that have route tos NAT gateways. This is needed in case the servers need to install update; However inbound traffic from internet outside the VPC cannot reach the servers;
-  5.	To keep the servers secure, the servers’ security group only accepts inbound traffic from the load balancer;
-  6.	Servers are launched and maintained by an auto scaling group that spans the private subnets to ensure high availability; 
+     	3 public subnets and 3 private subnets are created in a VPC; 
+     	3 private subnets are needed to enable multi-AZ for MySQL RDS
+     	The public subnets are accessible from internet through an internet gateway in the VPC;
+     	The private subnets are associated with route tables that have route to NAT gateways. This is needed in case the servers need to install update; However inbound traffic from internet outside the VPC cannot reach the servers;
+  	To keep the servers secure, the servers’ security group only accepts inbound traffic from the load balancer;
+  	Servers are launched and maintained by an auto scaling group that spans the private subnets to ensure high availability; 
 
 3.	Data Layer (Back-End): Data is stored in server EBS root volumes, S3 bucket, and MySQL database.  
   .	Servers are authorized to read and write to a S3 central storage bucket through EC2 role; 
@@ -29,7 +29,7 @@ These components were created:
 (5)	Route tables:1 public routable tables associate with the 3public subnets in zone 1a, 1b, and 1c; 
 3 private route tables associated with the 3 private subnets; 
 the private route tables each have one route to a NAT gateway in the same AZ;
-(6)	Application load balancer: it is internet facing; balanced to the 3 public subnets; it SG allows https from anywhere; listens to port 80;  (see LoadBalancer.tf)
+(6)	Application load balancer: it is internet facing; balanced to the 3 public subnets; it's SG allows http from anywhere; listens to port 80;  (see LoadBalancer.tf)
 (7)	Launch template: for web servers; 1 launch template with no AZ specified; 
 LT has instance profile attached to it which will allow the web servers access to S3 and RDS;
 The SG of this LT allows http traffic from the load balancer;
@@ -58,8 +58,9 @@ Story 5: Access web application through DNS service
 
 
 Story 6: Architectural Design 
-Please see the figures attached at the end of this file. The acceptance criteria states :“ We need to have architectural design that shows all the components of this Three Tier application. ”.  I believe the graph generated from terraform should have ALL the components. 
-I also tried to generate the diagram using former2.com and cloudformation. I scanned my account, and selected the components in this infrastructure, then generate a .yaml file, and paste it into cloudformation. The diagram is not as pretty as I hoped.
+Please see the figures attached at the end of this file. 
+I scanned my account, and selected the components in this infrastructure, then generate a .yaml file, and paste it into cloudformation. The diagram is not as pretty as I hoped.
+A diagram of the infrasctructure is also generated through terraform graph. 
 
 Story 7: Deploy the Presentation Layer (Front-End) for Production Environment in a Different Region
 To deploy this infrastructure in a different region, I only need to change the region and AZs in the variables.tf
@@ -69,38 +70,3 @@ Story 8: Deploy Three Tier Resources using Infrastructure as Code
 	User profile and credentials in provider.tf and backend.tf
 	S3 bucket name in backend.tf
 	hosted_zone_id in variables.tf
-
-Story 9: Containerize the Web Application (Presentation Layer (Front-End)    
-	The following are the steps to containerize the application and run in kubenetes. 
-1.	Create a dockerfile, and name is “dockerfile”. The contents are as below.
-FROM amazonlinux
-RUN yum -y install httpd
-RUN yum -y install git
-RUN echo ?Hello World from $(hostname -f)? > /var/www/html/index.html
-
-CMD ["/user/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
-2.	Open git bash, go to the directory where the dockerfile is, and create an image from dockerfile
-docker build -t my-app .
-3.	Create a .yaml file my-app-deployment.yaml for deployment: 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-app-deployment
-spec:
-  replicas: 3  # Adjust the number of replicas as needed
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-        - name: my-app-container
-          image: my-app
-          ports:
-            - containerPort: 80
-4. run kubenete to deploy the application:
-	kubectl  apply –f my-app-deployment.yaml
