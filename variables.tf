@@ -109,7 +109,7 @@ variable "user_data_for_instance" {
 
 variable "SNS_email" {
   type    = string
-  default = "luyuanzhang1980@gmail.com"
+  default = "luyuanzhangcloud@gmail.com"
 }
 
 variable "hosted_zone_id" {
